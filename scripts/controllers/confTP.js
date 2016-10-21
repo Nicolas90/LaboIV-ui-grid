@@ -1,6 +1,6 @@
 angular
-  .module('app')
-  //.module('app', ['ngMap'])
+  //.module('app')
+  .module('app', ['ngMap'])   //clave del api   AIzaSyA0ZoQz7RJm3BmIeJ11cVEiuydSImdPDe8
   .controller('ControlTP', function($scope, data, i18nService, uiGridConstants) {
     $scope.titulo = "Configuracion Campos";
     // Objeto de configuracion de la grilla.
