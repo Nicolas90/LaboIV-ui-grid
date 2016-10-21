@@ -38,4 +38,12 @@ angular
       templateUrl: 'views/modificar.html',
       controller:'ModificarCtrl'
     })
+    
+    .state('TP', {
+      url: '/TP',
+      templateUrl: 'views/ConfiguradoTP.html',
+      controller:'ControlTP'
+    })
+
+
   });
