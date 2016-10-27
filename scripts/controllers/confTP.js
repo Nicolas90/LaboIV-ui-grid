@@ -17,21 +17,23 @@ angular
       // Cargo los datos en la grilla.
       $scope.gridOptions.data = rta;
 
-
       //console.log(rta);
-
     });
 
-    console.log(uiGridConstants);
+    //console.log(uiGridConstants);
 
 
-    //$scope.map = {center: {latitud: 37.7699298, longitud: -122.4469157}, zoom: 12};
     
     
-    //$scope.mapData = {};
-    $scope.latitud = 39;
-    $scope.longitud = 40;
+    
+    $scope.mapData = {};
+    $scope.mapData.latitud = 33.6803003;
+    $scope.mapData.longitud = -116.173894;
+    $scope.mapData.nombre = "clear";
+    $scope.mapData.apellido = "";
+    $scope.mapData.avatar = "";
 
+    $scope.ListadoAmigos = {};
 
 
 //grid.appScope.NombreDeMiMetodo(row.entity){console.info(lo que recivo);} antes de la funcion , adentro del button
@@ -71,49 +73,38 @@ angular
           ,cellFilter: "date: 'dd-MM-yyyy'"
         },
         { 
-          field: 'botonTP', name: 'botonTP' , 
-          cellTemplate: "<button class='btn btn-warning' name='botonTP' ng-click='grid.appScope.botonTP(row.entity)'>Posicion<button/>"
+          field: 'posicion', name: 'posicion' , 
+          cellTemplate: "<button class='btn btn-warning' name='posicion' ng-click='grid.appScope.posicion(row.entity)'>Posicion<button/>"
+        },
+        { 
+          field: 'amigos', name: 'amigos' , 
+          cellTemplate: "<button class='btn btn-warning' name='amigos' ng-click='grid.appScope.amigos(row.entity)'>Amigos<button/>"
         }
       ];
     };
 
 
-    $scope.botonTP = function(rta) 
+    $scope.posicion = function(rta) 
     {
-      console.log(rta);
-      //console.log("Latitud: ",rta.latitud);
-      //console.log("Longitud: ",rta.logitud);
+      console.log("Fila: ",rta);
+      console.log("Latitud: ",rta.latitud);
+      console.log("Longitud: ",rta.logitud);
 
 
-      //$scope.map.center.latitud = rta.latitud;
-      //$scope.map.center.longitud = rta.logitud;
-
-
-
-
-      $scope.latitud = 23;
-      $scope.longitud = 11;
-
-
-      /*
-      $scope.latitud = rta.latitud;
-      $scope.longitud = rta.logitud;
       
-      */
-      console.log("Latitud: ",$scope.latitud);
-      console.log("Longitud: ",$scope.longitud);
-      
+      $scope.mapData.latitud = parseFloat(rta.latitud);
+      $scope.mapData.longitud = parseFloat(rta.logitud);
+      $scope.mapData.nombre = rta.nombre;
+      $scope.mapData.apellido = rta.apellido;
+      $scope.mapData.avatar = rta.avatar;
     };
 
-    $scope.botonTP2 = function() 
+    $scope.amigos = function(rta) 
     {
+      //$scope.mapData.nombre = "clear";
+      $scope.ListadoAmigos = rta.amigos;
 
-
-      $scope.latitud = 58;
-      $scope.longitud = 49;
-
-      console.log("Latitud: ",$scope.latitud);
-      console.log("Longitud: ",$scope.longitud);
+      console.log("Amigos: ",$scope.ListadoAmigos);
     };
 
 

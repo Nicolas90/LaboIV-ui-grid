@@ -4,9 +4,26 @@
     ui-grid-pagination
     ui-grid-resize-columns
   >
-
-
   </div>
+
+	<ng-map zoom="1" center="[{{mapData.latitud}}, {{mapData.longitud}}]">
+
+		<marker ng-if="mapData.nombre != 'clear'" position="[{{mapData.latitud}}, {{mapData.longitud}}]" 
+		icon="{{mapData.avatar}}"
+		title="{{mapData.nombre}} {{mapData.apellido}}"></marker>
+ 
+ 		<marker ng-repeat="amigo in ListadoAmigos" 
+ 		position="{{amigo.latitud}}, {{amigo.longitud}}" 
+ 		icon="{{amigo.avatar}}" title="{{amigo.nombre}} {{amigo.apellido}}"></marker>
+
+	</ng-map>
+
+    <br/>Latigude : {{mapData.latitud}}<input type="number" ng-model="mapData.latitud" />
+    <br/>Longitude : {{mapData.longitud}}<input type="number" ng-model="mapData.longitud" />
+	<!--button class="btn btn-warning" name="botonTP2" ng-click="botonTP2()"></button-->
+
+
+
 
   
 
