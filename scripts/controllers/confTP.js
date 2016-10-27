@@ -1,6 +1,5 @@
 angular
-  //.module('app')
-  .module('app', ['ngMap'])   //clave del api   AIzaSyA0ZoQz7RJm3BmIeJ11cVEiuydSImdPDe8
+  .module('app')
   .controller('ControlTP', function($scope, data, i18nService, uiGridConstants) {
     $scope.titulo = "Configuracion Campos";
     // Objeto de configuracion de la grilla.
@@ -26,7 +25,16 @@ angular
     console.log(uiGridConstants);
 
 
-//grid.addScope.NombreDeMiMetodo(row.entity){console.info(lo que recivo);} antes de la funcion , adentro del button
+    //$scope.map = {center: {latitud: 37.7699298, longitud: -122.4469157}, zoom: 12};
+    
+    
+    //$scope.mapData = {};
+    $scope.latitud = 39;
+    $scope.longitud = 40;
+
+
+
+//grid.appScope.NombreDeMiMetodo(row.entity){console.info(lo que recivo);} antes de la funcion , adentro del button
 
 
     function columnDefs () {
@@ -64,23 +72,49 @@ angular
         },
         { 
           field: 'botonTP', name: 'botonTP' , 
-          cellTemplate: "<button class='btn btn-warning' name='botonTP' ng-click='grid.appScope.botonTP(row.entity)'>"
+          cellTemplate: "<button class='btn btn-warning' name='botonTP' ng-click='grid.appScope.botonTP(row.entity)'>Posicion<button/>"
         }
       ];
-    }
-
-
-
-    
+    };
 
 
     $scope.botonTP = function(rta) 
     {
       console.log(rta);
-      console.log("Latitud: ",rta.latitud);
-      console.log("Longitud: ",rta.logitud);
+      //console.log("Latitud: ",rta.latitud);
+      //console.log("Longitud: ",rta.logitud);
 
-    }
+
+      //$scope.map.center.latitud = rta.latitud;
+      //$scope.map.center.longitud = rta.logitud;
+
+
+
+
+      $scope.latitud = 23;
+      $scope.longitud = 11;
+
+
+      /*
+      $scope.latitud = rta.latitud;
+      $scope.longitud = rta.logitud;
+      
+      */
+      console.log("Latitud: ",$scope.latitud);
+      console.log("Longitud: ",$scope.longitud);
+      
+    };
+
+    $scope.botonTP2 = function() 
+    {
+
+
+      $scope.latitud = 58;
+      $scope.longitud = 49;
+
+      console.log("Latitud: ",$scope.latitud);
+      console.log("Longitud: ",$scope.longitud);
+    };
 
 
 

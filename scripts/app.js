@@ -6,11 +6,12 @@ angular
     'ui.grid.resizeColumns',
     'ui.grid.selection',
     'ui.grid.exporter',
-    'ui.grid.edit'
+    'ui.grid.edit', 
+    'ngMap' //para poder utilizar el mapa de google
   ])
   .config(function ($stateProvider, $urlRouterProvider) {
 
-    $urlRouterProvider.otherwise('simple');
+    $urlRouterProvider.otherwise('TP');//('simple');
     $stateProvider
 
     .state('simple', {

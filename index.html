@@ -27,7 +27,7 @@
 
         <!-- endbuild -->
   </head>
-  <body ng-app="app">
+  <body ng-app="app" ng-controller="ControlTP"> <!--  PREGUNTAR POR QUE FUNCIONA SOLO CON ng-controller  -->
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -105,7 +105,17 @@
     <script src="scripts/controllers/confTP.js"></script>
 
 
-    <script src="http://maps.google.com/maps/api/js"></script>
+    <!--script src="http://maps.google.com/maps/api/js"></script-->
+    <!-- clave del api   AIzaSyA0ZoQz7RJm3BmIeJ11cVEiuydSImdPDe8 -->
+    <script src="http://maps.google.com/maps/api/js?key=AIzaSyA0ZoQz7RJm3BmIeJ11cVEiuydSImdPDe8"></script>
+
+    <!--ng-map center="[40.74, -74.18]"></ng-map-->
+    <ng-map center="[{{latitud}}, {{longitud}}]"></ng-map>
+    <br/>Latigude : {{latitud}}<input type="number" ng-model="latitud" />
+    <br/>Longitude : {{longitud}}<input type="number" ng-model="longitud" />
+    <button class="btn btn-warning" name="botonTP2" ng-click="botonTP2()"></button>
+
+
 
 
     <!-- endbuild -->
