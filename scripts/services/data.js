@@ -4,11 +4,11 @@ angular
     function extraerData (data){
       return data.data;
     }
-
+    /*
     this.data = function () {
       return $http.get('./data/MOCK_DATA.json').then(extraerData);
     }
-
+  */
     this.data = function () {
       return $http.get('./data/100DatosUIGrid.json').then(extraerData);
     }

@@ -11,7 +11,7 @@ angular
   ])
   .config(function ($stateProvider, $urlRouterProvider) {
 
-    $urlRouterProvider.otherwise('TP');//('simple');
+    $urlRouterProvider.otherwise('TP2');//('simple');
     $stateProvider
 
     .state('simple', {
@@ -44,6 +44,12 @@ angular
       url: '/TP',
       templateUrl: 'views/ConfiguradoTP.html',
       controller:'ControlTP'
+    })
+
+    .state('TP2', {
+      url: '/TP2',
+      templateUrl: 'views/ConfiguradoTP2.html',
+      controller:'ControlTP2'
     })
 
 
